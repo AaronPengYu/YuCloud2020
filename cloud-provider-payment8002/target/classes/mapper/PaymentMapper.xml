@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0/" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.aaron.springcloud.dao.PaymentDao">
+    <insert id="create" parameterType="com.aaron.springcloud.entities.Payment" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into tab_payment(col_serial) values(#{serial});
+    </insert>
+
+    <resultMap id="BaseResultType" type="com.aaron.springcloud.entities.Payment">
+        <id column="col_id" jdbcType="BIGINT" property="id" javaType="Long"/>
+        <id column="col_serial" jdbcType="VARCHAR" property="serial" javaType="String"/>
+    </resultMap>
+    <select id="getPaymentById" parameterType="Long" resultMap="BaseResultType">
+        select * from tab_payment where col_id=#{pid};
+    </select>
+</mapper>

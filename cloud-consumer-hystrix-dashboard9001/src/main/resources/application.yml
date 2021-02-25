@@ -1,0 +1,8 @@
+server:
+  port: 9001
+
+#isAllowedToProxy会取出proxyStreamAllowList元素和host匹配。如果没有设置proxyStreamAllowList，
+#他为空，就会出现 Unable to connect to Command Metric Stream的报错，无法刷出监控数据
+hystrix:
+  dashboard:
+    proxy-stream-allow-list: "localhost"

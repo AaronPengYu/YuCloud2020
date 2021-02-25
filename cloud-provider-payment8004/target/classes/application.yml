@@ -1,0 +1,13 @@
+# 表示注册到Zookeeper服务器的支付服务提供者端口号为8004
+server:
+  port: 8004
+
+# 服务别名
+spring:
+  application:
+    name: cloud-provider-payment
+  cloud:
+    zookeeper:
+    # 指向虚拟机的Zookeeper2181端口
+       connect-string: 192.168.1.9:2181
+#      connect-string: 10.7.14.19:2181
